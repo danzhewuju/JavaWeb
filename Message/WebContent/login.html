@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+boolean first=true;
+function autologin(){
+	var[] cookie=document.cookie.split(";");
+	
+	for(int i=0;i<cookie.size();i++)
+		{
+		var[] arr=cookie[i].split("=");
+		if(arr[i].equals("name"))
+			{
+	document.getElementById("123").value=arr[1];
+		}
+		
+		}
+}
+if(document.cookie!=null)
+	{
+	window.onload=autologin;
+	}
+	
+</script>
+<meta charset="UTF-8">
+<title>欢迎登录</title>
+</head>
+<body>
+
+<form action="Login" method="post" >
+
+<table>
+<tr> <td width=5%>姓名:</td><td width=80%><input type="text"  id="123" name="n1" > </td></tr>
+<tr><td width=5%>性别:</td><td width=80%><input type="radio" id="gender"  name="n2" value="男">男     <input type="radio" name="n2" value="女">女</td></tr>
+</table>
+<input type="checkbox" name="n3" value="true">记住我的密码
+<p><input type="submit" value="登录">
+<input type="reset" value="取消">
+</form>
+
+</body>
+</html>

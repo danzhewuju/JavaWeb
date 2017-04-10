@@ -1,0 +1,111 @@
+
+第三次上课
+ServletContext 
+装很多servlet的Tomcat应用程序
+一个servlet 或者多个访问用户之间的共享数据用的
+可以理解为Tomcat容器运行时一个公共空间
+上下文数据什么时候会失效？tomcat重启是会失效
+session
+每个访问用户独享的，彼此之间没有关联
+回话断掉（关闭浏览器，或者连接超时）的时候会失效
+cookie
+把数据保存至客户端浏览器
+可以指定失效时间
+用户可以手动删除
+参数初始化某一个servlet独享的参数
+
+存储数据 session request servletContext
+
+第三次作业：
+客户留言本
+1.每个客户可以通过输入用户名称和性别来登录
+2.登陆后可以浏览留言本并进行留言，如果没有登录拒绝访问留言本并且跳转登录页面（session），
+3.编写留言本页面程序（jsp/servlet）,显示留言的列表，留言信息保存到上下文对象
+4.留言页面，可以输入标题，留言内容。一旦提交给留言处理程序
+5.留言处理程序可以读取标题并自动生成留言的时间，留言人的名称，把以上的留言的信息保存下来。
+6.退出页面，断掉，并跳转到登录页面。
+7.登陆界面里面加一个记住用户名的选项一旦勾上，每次登陆的时候，将保存上一次登陆的用户名（还要读cookie）
+
+
+第四次上课
+网页中嵌入java脚本程序
+<%  %>服务器脚本（区别于客户端脚本）
+<!% java声明%>
+<%java代码%>
+<%=表达式%>
+<%@指令%>
+<jsp:动作名>
+！声明的变量，方法，类会成为jsp相对应的Servlet的成员
+非！定义的变量会成为对应的Servlet的_
+
+
+out.print("****")
+out是隐含对象
+
+
+第四次作业
+网上商店系统
+1.用户登录（用户名密码）登录
+2.显示商品列表页面（jsp，排版布局，支持多个商品），每个商品包含名字以及图片
+3.商品的内容要能够提供后台管理页面来实现增加和删除
+（tips：商品的存储实现 
+1.数据库
+2.文件
+3.某种容器应用共享存储方式）
+4.用户登陆了可以把商品选择把商品加入到购物车（购物车可以利用回话来实现或者cookie来实现）
+5.用户可以显示购物车的列表内容   （不管商品的数量）
+
+doPost() doGet()可以相互调用
+jsp组件包含
+编译之前完成的为静态，运行期间为动态
+静态包含：<%@include file="url"%> 成为主页面的一部分，共享所有的隐含变量在转行阶段不能进行任何处理，
+file不能为请求时的表达式，不能通过file传递参数
+
+动态包含：<jsp:include page="url"  flush="true|flase"> 动作标记flush为FALSE 
+
+<jsp:include page="url">
+<jsp:param name="yuhao" value="value1"/>//用于传递参数
+</jsp:include>
+
+<jsp:forward page="url"/>:跳转页面  可读性不是很好不推荐
+
+javaBeans：一种组件技术（封装），实现代码的重用（resuing）
+---项目代码的结构更加合理，可维护性高实现一种MVC（mode view control）的结构,解决jsp页面代码混乱不堪
+Mode ——JavaBeans 做数据存储，处理 
+View------jsp 主要做视图
+Control----servlet 跳转控制
+JavaBeans 一种java类，满足一点的规范必须实现Serializable借口，也就是具备串行化功能（将对象存入到硬盘中）
+
+javabeans
+定义：就是一个java类,满足一点的规范使用
+1.按照普通的类的使用方法来调用
+2.用标记 usebean等标记简化调用
+<jsp:useBean>
+<jsp:useBean id="yuhao" scope="page|request|session|application" class="com.demo.Customer">
+class:指定创建bean实例的java类,如果存在一个bean实例就会创建一个实例
+type:javabean 如果没有生成实例会报错
+class type至少用一个 但两个都用时
+比如Customer是一个（Person）的子类
+Person p=new Customer();
+type指向Person class指向Customer
+<jsp:setProperty name="customer" property="yuhao" value="name">//如果请求的参数名与javabeans的属性名一直就可以
+不用value
+
+<jsp:getProperty>
+
+练习：1.把网上商店添加头部和尾部界面
+      2。用javaBeans来实现登录操作（User），购物车（Car）其中登录操作里可以提交的参数名和javaBean的属性名相同
+（不指定param和value,或者使用*）
+
+
+EL:表达式语言提供了一种简洁的页面代码表达方式，减少了代码中的java源程序<%%>
+${expression}
+
+jsp标签技术：把java代码从jsp页面里剥离出来的技术扩展HTML标定，标签可以使任意的标签
+<usst></usst>
+
+作业：
+1.输入用户名以及密码点击登录跳转到一个jsp页面，该页面用el方式读取用户名和密码
+2.用el,Javabean，jstl技术来改写上次多个学生的登录的作业
+
+

@@ -1,0 +1,22 @@
+package usst;
+
+import java.util.ArrayList;
+
+public class Students {
+private ArrayList<Student>students;
+
+public ArrayList<Student> getStudents() {
+	return students;
+}
+
+public void setStudents(ArrayList<Student> students) {
+	this.students = students;
+}
+
+public void addstudent(Student student){
+	students.add(student);
+}
+public void delstudent(int index){
+	students.remove(index);
+}
+}

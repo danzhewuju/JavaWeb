@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" >
+function altere(){
+var r=confirm("你确认删除吗？");
+if(r)alert("你已经删除")
+else alert("已经取消");
+}
+function change(){
+	document.getElementById("123").value="yuhao";
+}
+
+function writer(){
+
+	var result=prompt("请输入你的名字：");
+	if(result==null)
+		{
+		alert("你已经选择了取消");
+		}
+	else if(result==" ")
+		{alert("输入为空请重新选择");writer();}
+	else {alert("hello"+result);
+	document.write("欢迎你来到javascript"+result);
+	person=new Object();
+	person.name="yuhao";
+	person.years=21;
+
+	}
+}
+window.onload=change();
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Test" method="post">
+<input type="text" id="123" >
+<input id="sure" type="button" value="sure" onclick=alert("nihao") ;>
+<input type="button" value="delete" onmousemove=writer()>
+<p id="p1">
+<p><input type="submit" value="确定">
+</form>
+</body>
+</html>
