@@ -4,16 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>欢迎登录</title>
+<title>Insert title here</title>
 </head>
 <body>
-<center>
-<form action="DealWith.jsp" method="post">
-<p>学号：<input type="text" name="sno">
-<p>姓名：<input type="text" name="sname">
-<p><input type="submit" value="确认">
-<input type="reset" value="取消"></p>
-</form>
-</center>
+
 </body>
 </html>

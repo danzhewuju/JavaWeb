@@ -8,6 +8,7 @@ private int sum;
 
 public Students(){
 	students=new ArrayList<Student>();
+	sum=0;
 }
 
 public ArrayList<Student> getStudents() {
@@ -20,11 +21,11 @@ public void setStudents(ArrayList<Student> students) {
 
 public void addstudent(Student student){
 	students.add(student);
-	sum=students.size();
+	sum++;
 }
 public void delstudent(int index){
 	students.remove(index);
-	sum=students.size();
+	sum--;
 }
 
 public int getSum() {
