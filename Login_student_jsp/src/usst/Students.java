@@ -21,11 +21,11 @@ public void setStudents(ArrayList<Student> students) {
 
 public void addstudent(Student student){
 	students.add(student);
-	sum++;
+	sum=students.size();
 }
 public void delstudent(int index){
 	students.remove(index);
-	sum--;
+	sum=students.size();
 }
 
 public int getSum() {
