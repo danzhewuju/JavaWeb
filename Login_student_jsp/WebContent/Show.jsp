@@ -12,10 +12,8 @@ function sure(){
 	if(r){
 		alert("删除成功！");
 		window.location.href="Del.jsp?index="+ID;
-		
 	}
 	else if(r==false){
-		alert("你已经取消删除！");
 		window.location.href="Show.jsp"
 	}
 }
@@ -54,7 +52,7 @@ students=(Students)application.getAttribute("students");
 <td>${students.students[i].sname } </td>
 <td>${students.students[i].sno }</td>
 <td><a href="Edit.jsp?index=${i}"><input type="button" value="编辑"></a></td>
-<td><input type="hidden" id="edit" value="${i}"><input type="button" value="删除" onclick="sure()"></td>
+<td><input type="hidden" id="del" value="${i}"><input type="button" value="删除" onclick="sure()"></td>
 </tr>
 </c:forEach>
 </table>

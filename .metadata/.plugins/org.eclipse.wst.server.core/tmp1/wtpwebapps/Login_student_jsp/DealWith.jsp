@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>学生信息表</title>
 </head>
 <body>
 <%
@@ -23,21 +23,21 @@ request.setCharacterEncoding("UTF-8");
 <jsp:setProperty property="sno" name="student"/>
 
 
-<c:if test="<%=first %>" var="result">
+<c:if test="<%=first %>">
 <%
-first=false;
 students=new Students();
 students.addstudent(student);
 application.setAttribute("students", students);
 %>
 </c:if>
-<c:if test="!<%=first %>" var="result">
+<c:if test="<%=!first %>">
 <%
 students=(Students)application.getAttribute("students");
 students.addstudent(student);
 application.setAttribute("students", students);
 %>
 </c:if>
+<%first=false; %>
 <jsp:forward page="Show.jsp"></jsp:forward>
 </body>
 </html>

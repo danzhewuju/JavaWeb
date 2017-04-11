@@ -25,7 +25,6 @@ request.setCharacterEncoding("UTF-8");
 
 <c:if test="<%=first %>">
 <%
-
 students=new Students();
 students.addstudent(student);
 application.setAttribute("students", students);

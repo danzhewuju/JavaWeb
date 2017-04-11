@@ -5,6 +5,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript">
+function sure(){
+	var r=confirm("请确认删除?");
+	var ID=document.getElementById("del").value;
+	if(r){
+		alert("删除成功！");
+		window.location.href="Del.jsp?index="+ID;
+	}
+	else if(r==false){
+		window.location.href="Show.jsp"
+	}
+}
+</script>
 <style type="text/css">
 
 .btn{
@@ -29,16 +42,17 @@ students=(Students)application.getAttribute("students");
 <center>
 <table border=1>
 <caption>学生信息表</caption>
-<c:forEach var="i" begin="0" end="${students.sum-1}" step="1" >
 <tr>
 <td>序号</td><td>姓名</td><td>学号</td><td>操作</td><td>操作</td>
 </tr>
+
+<c:forEach var="i" begin="0" end="${students.sum-1}" step="1" >
 <tr>  
 <td>${i+1}</td>
 <td>${students.students[i].sname } </td>
 <td>${students.students[i].sno }</td>
-<td><a href="Edit.jsp?index=${i}">编辑</a></td>
-<td><a href="Del.jsp?index=${i}">删除</a></td>
+<td><a href="Edit.jsp?index=${i}"><input type="button" value="编辑"></a></td>
+<td><input type="hidden" id="del" value="${i}"><input type="button" value="删除" onclick="sure()"></td>
 </tr>
 </c:forEach>
 </table>
