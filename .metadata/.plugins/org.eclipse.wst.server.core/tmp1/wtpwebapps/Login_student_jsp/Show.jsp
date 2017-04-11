@@ -40,12 +40,17 @@ request.setCharacterEncoding("UTF-8");
 students=(Students)application.getAttribute("students");
 %>
 <center>
+<c:if test="${applicationScope.students.sum==0 }">
+<p>sorry these are not students
+
+
+</c:if>
+<c:if test="${applicationScope.students.sum!=0 }">
 <table border=1>
 <caption>学生信息表</caption>
 <tr>
 <td>序号</td><td>姓名</td><td>学号</td><td>操作</td><td>操作</td>
 </tr>
-
 <c:forEach var="i" begin="0" end="${students.sum-1}" step="1" >
 <tr>  
 <td>${i+1}</td>
@@ -56,6 +61,8 @@ students=(Students)application.getAttribute("students");
 </tr>
 </c:forEach>
 </table>
+</c:if>
+
 <p><a href="Login.jsp"><input type="button" value="登记学生" class="btn"></a>
 </center>
 </body>
