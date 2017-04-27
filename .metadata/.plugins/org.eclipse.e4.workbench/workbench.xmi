@@ -818,7 +818,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_yjuQiR5pEeeivPtsmC0XAA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vXiB8B8iEeeDP88J1SpuWg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_yj852x5pEeeivPtsmC0XAA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oP8AQCQcEeeLptmM_kZikA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_yj852x5pEeeivPtsmC0XAA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_yjuQlh5pEeeivPtsmC0XAA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -848,7 +848,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_yju3lB5pEeeivPtsmC0XAA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vYGpsB8iEeeDP88J1SpuWg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_yj8ThR5pEeeivPtsmC0XAA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oQO7MiQcEeeLptmM_kZikA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_yj8ThR5pEeeivPtsmC0XAA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_yju3nh5pEeeivPtsmC0XAA" elementId="org.eclipse.jst.pagedesigner.PageDesignerEditor" visible="false">
         <tags>Draggable</tags>
@@ -2053,7 +2053,7 @@
     <tags>View</tags>
     <tags>categoryTag:General</tags>
   </descriptors>
-  <descriptors xmi:id="_yjyh8B5pEeeivPtsmC0XAA" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.gif" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+  <descriptors xmi:id="_yjyh8B5pEeeivPtsmC0XAA" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.browser.WebBrowserView"/>
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.browser"/>
     <tags>View</tags>
@@ -2208,84 +2208,6 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.xsl.ui"/>
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiDB5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/device.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.DeviceView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiDR5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.OldLogCatView" label="LogCat (deprecated)" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/android.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.OldLogCatView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiDh5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/logcat.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.LogCatView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiDx5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/thread.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.ThreadView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiEB5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.HeapView" label="Heap" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/heap.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.HeapView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiER5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.FileExplorerView" label="File Explorer" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/android.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiEh5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/emulator-16.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.EmulatorControlView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiEx5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="Allocation Tracker" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/heap.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.AllocTrackerView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiFB5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.NetworkStatsView" label="Network Statistics" iconURI="platform:/plugin/com.android.ide.eclipse.ddms/icons/networkstats.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.NetworkStatisticsView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiFR5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.ddms.views.SysInfoView" label="System Information" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Android" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.ddms.views.SysInfoView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.ddms"/>
-    <tags>View</tags>
-    <tags>categoryTag:Android</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiFh5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.gltrace.views.FrameBuffer" label="Frame Summary" iconURI="platform:/plugin/com.android.ide.eclipse.gldebugger/icons/opengl.png" tooltip="" category="Tracer for OpenGL ES" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.gltrace.views.FrameSummaryView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.gldebugger"/>
-    <tags>View</tags>
-    <tags>categoryTag:Tracer for OpenGL ES</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiFx5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.gltrace.views.State" label="GL State" iconURI="platform:/plugin/com.android.ide.eclipse.gldebugger/icons/opengl.png" tooltip="" category="Tracer for OpenGL ES" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.gltrace.views.StateView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.gldebugger"/>
-    <tags>View</tags>
-    <tags>categoryTag:Tracer for OpenGL ES</tags>
-  </descriptors>
-  <descriptors xmi:id="_yjyiGB5pEeeivPtsmC0XAA" elementId="com.android.ide.eclipse.gltrace.views.Details" label="Details" iconURI="platform:/plugin/com.android.ide.eclipse.gldebugger/icons/opengl.png" tooltip="" category="Tracer for OpenGL ES" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="com.android.ide.eclipse.gltrace.views.detail.DetailsView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="com.android.ide.eclipse.gldebugger"/>
-    <tags>View</tags>
-    <tags>categoryTag:Tracer for OpenGL ES</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -3672,6 +3594,10 @@
   <commands xmi:id="_yj9hQB5pEeeivPtsmC0XAA" elementId="AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.viewmodel.debugview.update.Refresh/org.eclipse.cdt.dsf.debug.ui.debugview.viewmodel.update.actions.refresh" commandName="Refresh" category="_yj9haB5pEeeivPtsmC0XAA"/>
   <commands xmi:id="_yj9hQR5pEeeivPtsmC0XAA" elementId="AUTOGEN:::org.eclipse.cdt.debug.ui.disassembly.toolbar/org.eclipse.pinclone.disassembly.pinDebugContext" commandName="Pin to Debug Context" category="_yj9haB5pEeeivPtsmC0XAA"/>
   <commands xmi:id="_yj9hQh5pEeeivPtsmC0XAA" elementId="AUTOGEN:::org.eclipse.cdt.debug.ui.disassembly.toolbar/org.eclipse.pinclone.disassembly.clone" commandName="Open New View" category="_yj9haB5pEeeivPtsmC0XAA"/>
+  <commands xmi:id="_Tl_9QCQbEeeKJ4yliZqvCQ" elementId="org.eclipse.wst.jsdt.js.grunt.commands.gruntLaunch" commandName="Run as Grunt Task" category="_yj9haB5pEeeivPtsmC0XAA"/>
+  <commands xmi:id="_TmAkUCQbEeeKJ4yliZqvCQ" elementId="org.eclipse.wst.jsdt.js.gulp.commands.gulpLaunch" commandName="Run as Gulp Task" category="_yj9haB5pEeeivPtsmC0XAA"/>
+  <commands xmi:id="_TmAkUSQbEeeKJ4yliZqvCQ" elementId="org.eclipse.egit.ui.team.CompareWithRef" commandName="Compare with Branch, Tag or Reference..." category="_yj9hgR5pEeeivPtsmC0XAA"/>
+  <commands xmi:id="_TmBLYCQbEeeKJ4yliZqvCQ" elementId="org.eclipse.wst.jsdt.chromium.debug.js.command" commandName="Chrome / Chromium Debugger" category="_Tl7EwSQbEeeKJ4yliZqvCQ"/>
   <addons xmi:id="_yj9hQx5pEeeivPtsmC0XAA" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_yj9hRB5pEeeivPtsmC0XAA" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_yj9hRR5pEeeivPtsmC0XAA" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -3743,4 +3669,5 @@
   <categories xmi:id="_yj9hhx5pEeeivPtsmC0XAA" elementId="org.eclipse.pde.runtime.spy.commands.category" name="Spy"/>
   <categories xmi:id="_yj9hiB5pEeeivPtsmC0XAA" elementId="org.eclipse.cdt.debug.ui.category.reverseDebugging" name="Reverse Debugging Commands" description="Set of commands for Reverse Debugging"/>
   <categories xmi:id="_yj9hiR5pEeeivPtsmC0XAA" elementId="org.eclipse.cdt.debug.ui.category.tracing" name="Tracing Commands" description="Category for Tracing Commands"/>
+  <categories xmi:id="_Tl7EwSQbEeeKJ4yliZqvCQ" elementId="org.eclipse.wst.jsdt.chromium.debug.js.category" name="Chrome / Chromium"/>
 </application:Application>
