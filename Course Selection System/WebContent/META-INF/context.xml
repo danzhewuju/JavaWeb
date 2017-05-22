@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reload="true">
+<Resource 
+name="jdbc/sampleDS"
+type="javax.sql.DataSource"
+maxActive="200"
+maxIdle="30"
+username="root"
+maxWait="100"
+driverClassName="com.mysql.jdbc.Driver"
+password="chingblxyh666888"
+url="jdbc:mysql://localhost:3306/courseselectionsystem?useSSL=true"/>
+</Context>
