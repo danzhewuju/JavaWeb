@@ -35,8 +35,8 @@ function Choose(Sno,Cno,Tno)
 
 <table class="table table-striped">
 <tr><td>Sno</td><td>Name</td><td>Teacher</td><td>ClassRoom</td><td>Time</td><td>Total</td><td>Choose</td></tr>
-<c:forEach var="i" begin="0" end="${sessionScope.opcourseslist.count-1 }" step="1">
-
+<c:forEach var="i" begin="0" end="${sessionScope.opcourseslist.count }" step="1">
+<c:if test="${i!=sessionScope.opcourseslist.count }">
 <tr><td>${sessionScope.opcourseslist.opcourseslist[i].courses.cno} </td>
 <td>${sessionScope.opcourseslist.opcourseslist[i].courses.cname }</td>
 <td>${sessionScope.opcourseslist.opcourseslist[i].teacher.tname }</td>
@@ -47,6 +47,9 @@ function Choose(Sno,Cno,Tno)
 onclick="Choose('${sessionScope.student.sno}',
 '${sessionScope.opcourseslist.opcourseslist[i].courses.cno}',
 '${sessionScope.opcourseslist.opcourseslist[i].teacher.tno}')">Choose</button></td></tr>
+
+</c:if>
+
 </c:forEach>
 
 </table>
@@ -74,8 +77,9 @@ onclick="Choose('${sessionScope.student.sno}',
      </c:choose>
     <c:set var="time" value="${week}-${day}"></c:set>
         <td>  
-        <c:forEach var="x" begin="0" end="${sessionScope.studentschedule.count-1 }" step="1">
-        <c:if test="${sessionScope.studentschedule.studentschedule[x].courses.ctime==time}">
+        <c:forEach var="x" begin="0" end="${sessionScope.studentschedule.count }" step="1">
+        <c:if test="${x!=sessionScope.studentschedule.count  }">
+            <c:if test="${sessionScope.studentschedule.studentschedule[x].courses.ctime==time}">
         <table class="table table-striped">
         <tr>
         <td>${sessionScope.studentschedule.studentschedule[x].courses.cname} </td>
@@ -94,6 +98,9 @@ onclick="Choose('${sessionScope.student.sno}',
         
         
         </c:if>
+        
+        </c:if>
+    
         
         </c:forEach>
         </td>

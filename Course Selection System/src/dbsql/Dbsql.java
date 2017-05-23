@@ -312,6 +312,22 @@ private  Connection con=null;
 	 return flag;	
  }
  
+ public void addBackmsn(int ID,String Backmsn){
+	 con=getcon();
+	 String sql="update message set Backmsn=? where ID=?";
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Backmsn);
+		pstm.setInt(2, ID);
+		
+		pstm.executeUpdate();
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
+ }
  public boolean addT_courses(String Tno,String Cno){
 	 boolean flag=false;
 	 String sql="insert into t_courses values(?,?)";
@@ -407,6 +423,21 @@ private  Connection con=null;
 	 return flag;
  }
  
+ public void EditFlagFromMessage(int ID,int key)
+ {
+	 con=getcon();
+	 String sql="update message set Flag=? where ID=?";
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setInt(1, key);
+		pstm.setInt(2, ID);
+		pstm.executeUpdate();
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+ }
  
  public boolean delTeachertBySno(String ID){//删除老师信息
 	 boolean flag=false;
@@ -516,6 +547,35 @@ private  Connection con=null;
 	}
 	 
 	 return Rlist;
+ }
+ public  EvaluationList  getAllEvaluationByTno(String Tno){
+	 con=getcon();
+	 EvaluationList evalist=new EvaluationList();
+	 ArrayList<Evaluation> areva=new ArrayList<>();
+	 String sql="select * from evaluation where Tno=?";
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Tno);
+		ResultSet rs=pstm.executeQuery();
+		while(rs.next()){
+			Evaluation eva=new Evaluation();
+			Student student=getStudent(rs.getString(1));
+			Teacher teacher=getTeacher(Tno);
+			Courses courses=getCourses(rs.getString(2));
+			eva.setStudent(student);
+			eva.setTeacher(teacher);
+			eva.setCourses(courses);
+			eva.setEva(rs.getString(4));
+			eva.setScore(rs.getInt(5));
+		   areva.add(eva);
+		}
+		evalist.setEvaluationlist(areva);
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 return evalist;
  }
  
  public ClassRoom getClassRoom(String E)//通过教室名称查找并返回ClassRoom
@@ -690,6 +750,75 @@ private  Connection con=null;
 	
 	 return teacherlist;
  }
+ 
+ 
+ public MessageList getAllMessageForTeacher(String Tno){//获得所有信息列表
+	 con=getcon();
+	 MessageList messagelist=new MessageList();
+	 ArrayList<Message> armessage=new ArrayList<>();
+	 String sql="select * from message where Tno=?";
+	
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Tno);
+		ResultSet rs=pstm.executeQuery();
+		while(rs.next())
+		{
+			if(rs.getInt(4)==1){
+				 Teacher teacher=getTeacher(Tno);
+				Student student=getStudent(rs.getString(2));
+				Message message=new Message();
+				message.setStudent(student);
+				message.setTeacher(teacher);
+				message.setID(rs.getInt(1));
+				message.setMsn(rs.getString(5));
+				armessage.add(message);
+				
+			}
+		}
+		messagelist.setMessagelist(armessage);
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
+	 return messagelist;
+ }
+ public MessageList getAllMessageForStudent(String Sno)
+ {
+	 MessageList messageList=new MessageList();
+	 ArrayList<Message> armessage=new ArrayList<>();
+	 String sql="select * from message where Sno=?";
+	 con=getcon();
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Sno);
+		ResultSet rs=pstm.executeQuery();
+		Student student=getStudent(Sno);
+		while(rs.next()){
+			if(rs.getInt(4)==2)
+			{
+				Teacher teacher=getTeacher(rs.getString(3));
+				String Backmsn=rs.getString(6);
+				Message message=new Message();
+				message.setStudent(student);
+				message.setTeacher(teacher);
+				message.setID(rs.getInt(1));
+				message.setMsn(rs.getString(5));
+				message.setBackmsn(Backmsn);
+				armessage.add(message);
+			}
+		
+		}
+		messageList.setMessagelist(armessage);
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 return messageList;
+ }
  public  Courses  getCourses(String E)//通过编号或者名称来查找课程
  {
 	   con=getcon();
@@ -798,10 +927,11 @@ private  Connection con=null;
  }
  public String getTnofromT_courseByCno(String Cno){//获得所教课程的老师
 	 con=getcon();
-	 String sql="select Tno from t_courses";
+	 String sql="select Tno from t_courses where Cno=?";
 	 String Tno=null;
 	 try {
 		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Cno);
 		ResultSet rs=pstm.executeQuery();
 		if(rs.next())
 		{
@@ -814,6 +944,47 @@ private  Connection con=null;
 	}
 	 
 	 return Tno;
+ }
+ public int getFlagFromEvaluation(String Sno,String Cno,String Tno)
+ {
+	 int flag=1;
+	 String sql="select * from evaluation where Sno=? and Cno=? and Tno=?";
+	 con=getcon();
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setString(1, Sno);
+		pstm.setString(2, Cno);
+		pstm.setString(3, Tno);
+		ResultSet rs=pstm.executeQuery();
+		if(rs.next())
+		{
+			flag=rs.getInt(5);	
+		}
+		else flag=-1;
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 return flag;
+ }
+ 
+ public void  updateFlagFromevaluation(String Sno,String Cno,String Tno,int Flag){
+	 con=getcon();
+	 String sql="update evaluation set Flag=? where Sno=? and Cno=? and Tno=?";
+	 try {
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setInt(1, Flag);
+		pstm.setString(2, Sno);
+		pstm.setString(3, Cno);
+		pstm.setString(4, Tno);
+		pstm.executeUpdate();
+		con.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
  }
  public ArrayList<String> getCnofromt_coursesByTno(String Tno)
  {
@@ -998,12 +1169,12 @@ private  Connection con=null;
  {
 	 boolean flag=false;
 	 con=getcon();
-	 String sql="insert into evaluation values(?,?,?,?,?)";
+	 String sql="insert into evaluation(Sno,Cno,Tno,Eva,Score) values(?,?,?,?,?)";
 	 try {
 		PreparedStatement pstm=con.prepareStatement(sql);
 		pstm.setString(1,Sno );
-		pstm.setString(2,Tno );
-		pstm.setString(3,Cno );
+		pstm.setString(2,Cno );
+		pstm.setString(3,Tno );
 		pstm.setString(4,Eva );
 		pstm.setInt(5, Score);
 		flag=pstm.execute();

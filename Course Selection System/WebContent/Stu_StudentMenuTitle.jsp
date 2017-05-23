@@ -22,7 +22,12 @@
 
 <li role="presentation" ><a href="StudentScoreinquiry">Score Inquiry</a> </li>
 <li role="presentation" ><a href="StudentEvaluation">Teacher Evaluation</a> </li>
-<li role="presentation" ><a href="StudentGetHelp">Getting Help</a> </li>
+<li role="presentation" ><a href="StudentGetHelp">Question
+<c:if test="${sessionScope.messagelist.count>0 }">
+<span class="badge">you have${sessionScope.messagelist.count} message</span>
+</c:if>
+
+</a> </li>
 <li role="presentation"><a href="">${sessionScope.student.sname}(${sessionScope.student.sno }) Student</a></li>
 <li role="presentation" ><a href="Login.html">Exit <span class="glyphicon glyphicon-remove" ></span></a>
 

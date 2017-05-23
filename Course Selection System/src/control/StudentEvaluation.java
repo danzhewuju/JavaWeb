@@ -43,6 +43,7 @@ public class StudentEvaluation extends HttpServlet {
 			key[i]=1;
 		}
 		request.getSession().setAttribute("key", key);
+		studentschedule.Check();
 		request.getSession().setAttribute("studentschedule", studentschedule);
 		request.getSession().setAttribute("first", first);
 		response.sendRedirect("StudentEvaluation.jsp");

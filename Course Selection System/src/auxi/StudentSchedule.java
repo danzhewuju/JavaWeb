@@ -11,9 +11,11 @@ public class StudentSchedule {//学生的已选课程
 	 private ArrayList<OpCourses>  studentschedule;
 	 int count;
 	  Schedule schedule;
+	private String Sno;
 	 
 	 
 	public StudentSchedule(String Sno){
+		this.Sno=Sno;
 		 studentschedule=new ArrayList<OpCourses>();
 		 
 		 count=0;
@@ -78,5 +80,23 @@ public class StudentSchedule {//学生的已选课程
 		this.schedule = schedule;
 	}
 	
-	
+	public void  Check()
+	{
+		Dbsql db=new Dbsql();
+	  String Sno,Cno,Tno;
+	  for(int i=0;i<count;i++){
+		  Sno=this.Sno;
+		  Cno=studentschedule.get(i).getCourses().getCno();
+		  Tno=studentschedule.get(i).getTeacher().getTno();
+		  if(db.getFlagFromEvaluation(Sno, Cno, Tno)!=-1)
+		  {
+			  if(db.getFlagFromEvaluation(Sno, Cno, Tno)!=0)
+			  {
+				  studentschedule.remove(i);
+				  count--;
+			  }
+		  }
+		 
+	  }
+	}
 }

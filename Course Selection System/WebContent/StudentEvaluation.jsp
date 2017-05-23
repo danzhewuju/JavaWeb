@@ -21,7 +21,7 @@ function Send(Cno,i,Tno){
 			}
 		
 		}
-	document.getElementById("btn"+i).disabled=true;
+
 	window.location.href="StudentSendEvaluation?Cno="+Cno+"&Eva="+eva+"&Score="+score+"&Tno="+Tno+"&Indox="+i;
 }
 </script>

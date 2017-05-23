@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import auxi.StudentSchedule;
 import dbsql.Dbsql;
+import entity.MessageList;
 import entity.Student;
 import entity.Teacher;
 
@@ -35,6 +36,11 @@ public class StudentGetHelp extends HttpServlet {
 		Student student=(Student) request.getSession().getAttribute("student");
 		StudentSchedule studentschedule=new  StudentSchedule(student.getSno());
 		request.getSession().setAttribute("studentschedule", studentschedule);
+		
+		Dbsql db=new Dbsql();
+		
+		MessageList messagelist=db.getAllMessageForStudent(student.getSno());
+		request.getSession().setAttribute("messagelist", messagelist);
 		response.sendRedirect("StudentGetHelp.jsp");
 	}
 

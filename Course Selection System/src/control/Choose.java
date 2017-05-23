@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dbsql.Dbsql;
 import entity.Manager;
+import entity.MessageList;
 import entity.Student;
 import entity.Teacher;
 
@@ -62,6 +63,8 @@ public class Choose extends HttpServlet {
 				if(sample_code.equals(Code))
 				{
 					request.getSession().setAttribute("student", student);
+					MessageList messagelist=db.getAllMessageForStudent(student.getSno());
+					request.getSession().setAttribute("messagelist", messagelist);
 					response.sendRedirect("Stu_StudentMenu.jsp");
 				}
 				else
@@ -80,6 +83,8 @@ public class Choose extends HttpServlet {
 					if(sample_code.equals(Code))
 					{
 						request.getSession().setAttribute("teacher", teacher);
+						MessageList messagelist=db.getAllMessageForTeacher(teacher.getTno());
+						request.getSession().setAttribute("messagelist", messagelist);
 						response.sendRedirect("TeacherMenu.jsp");
 					}
 					else

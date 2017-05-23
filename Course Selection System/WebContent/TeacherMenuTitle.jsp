@@ -21,9 +21,13 @@
 
 <li role="presentation" ><a href="TeacherScoreReistration">Score Registration</a> </li>
 
-<li role="presentation" ><a href="">Check Comment</a> </li>
-<li role="presentation" ><a href="">Answer Student</a> </li>
-<li role="presentation"><a href="">${sessionScope.teacher.tname}(${sessionScope.teacher.tno})Teacher</a></li>
+<li role="presentation" ><a href="TeacherCheckComment">Check Comment</a> </li>
+<li role="presentation" ><a href="TeacherAnswerStudent">Answer Student
+<c:if test="${sessionScope.messagelist.count>0 }">
+<span class="badge">${sessionScope.messagelist.count}</span>
+</c:if>
+</a> </li>
+<li role="presentation"><a href="#">${sessionScope.teacher.tname}(${sessionScope.teacher.tno})Teacher</a></li>
 <li role="presentation" ><a href="Login.html">Exit <span class="glyphicon glyphicon-remove" ></span></a>
 
 </li>
